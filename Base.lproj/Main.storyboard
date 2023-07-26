@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d4x-MG-hhi">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Hia-hC-oWn">
+            <objects>
+                <collectionViewController id="mEY-Ao-hme" customClass="ViewController" customModule="FlippedCardsGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qId-z2-c4m">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g0m-hz-ydY">
+                            <size key="itemSize" width="128" height="256"/>
+                            <size key="estimatedItemSize" width="128" height="156"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="50" minY="0.0" maxX="50" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Card" id="pVE-U1-yPy" customClass="CardCell" customModule="FlippedCardsGame" customModuleProvider="target">
+                                <rect key="frame" x="50" y="0.0" width="128" height="256"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="jiR-Xr-dbQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="128" height="256"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-gf-hBG">
+                                            <rect key="frame" x="-1" y="-11" width="130" height="284"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="i9a-gf-hBG" secondAttribute="bottom" constant="-17" id="138-OW-zlI"/>
+                                        <constraint firstItem="i9a-gf-hBG" firstAttribute="top" secondItem="jiR-Xr-dbQ" secondAttribute="top" constant="-11" id="KAK-2J-mZ9"/>
+                                        <constraint firstItem="i9a-gf-hBG" firstAttribute="centerX" secondItem="jiR-Xr-dbQ" secondAttribute="centerX" id="aev-tg-KGM"/>
+                                        <constraint firstItem="i9a-gf-hBG" firstAttribute="leading" secondItem="jiR-Xr-dbQ" secondAttribute="leading" constant="-1" id="yN5-nQ-gSn"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="128" height="256"/>
+                                <connections>
+                                    <outlet property="imageView" destination="i9a-gf-hBG" id="f0i-zI-szJ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="mEY-Ao-hme" id="kMo-ba-gag"/>
+                            <outlet property="delegate" destination="mEY-Ao-hme" id="6cv-gy-uLL"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="6yH-b6-Mjb"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8BU-T3-rXQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2034.3511450381679" y="-39.436619718309863"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BOZ-UZ-6ny">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d4x-MG-hhi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lXY-Ca-SuV">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mEY-Ao-hme" kind="relationship" relationship="rootViewController" id="VP7-Bx-VJK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fpT-zB-sH5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1107.6335877862596" y="-39.436619718309863"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
