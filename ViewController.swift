@@ -161,7 +161,9 @@ class ViewController: UICollectionViewController {
     }
     
     @objc func newGame() {
+        score = 0
         cards.removeAll()
+        selectedCards.removeAll()
         loadCards()
         collectionView.reloadData()
     }
